@@ -14,6 +14,7 @@
   --midnight-blue: #2c3e50;
   --darkCharcoal: #222020;
   --color: #143f7d;
+  --color2: #1a1a1a;
   --sectionPadding: 150px 100px;
   --sectionPadding2: 100px 100px;
   --sectionPadding3: 80px 70px 50px;
@@ -739,6 +740,116 @@ span {
 }
 /* footer section ends */
 
+/* MODAL SECTION STARTS */
+.modal-background {
+  /* width: 100vw; */
+  background-color: rgba(0, 0, 0, 0.955);
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  color: var(--white);
+  padding: 30px;
+  display: none;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  /* Track */
+  /* &::-webkit-scrollbar-track {
+    background: blue;
+  } */
+
+  /* Handle */
+  /* &::-webkit-scrollbar-thumb {
+    background: red;
+  } */
+}
+
+.modal-contents {
+  background-color: var(--color2);
+  width: 60%;
+  padding: 30px;
+  margin: 30px auto;
+  animation: precious 4s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.modal-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.modal-texts h1 {
+  font-size: var(--font-size7);
+}
+
+.modal-texts p {
+  font-size: var(--font-size3);
+  text-align: center;
+}
+
+.modal-contents .alla {
+  font-size: var(--font-size3);
+  color: var(--white);
+  font-weight: bolder;
+}
+
+.closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: -15px;
+  right: 0px;
+  color: rgba(102, 95, 95, 0.753);
+  background-color: var(--white);
+  font-weight: 900;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn8 {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: bolder;
+  font-size: var(--font-size3);
+  background-color: var(--dodger-blue2);
+  cursor: pointer;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn8:hover {
+  background-color: var(--dodger-blue);
+}
+
+@keyframes precious {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* MODAL SECTION endS */
 /* header-responsiveness starts*/
 /* ==> 860px */
 @media (max-width: 860px) {
@@ -791,8 +902,8 @@ span {
 /* header-responsiveness ends */
 
 /* into-sec responsivensess starts */
-/* ==> 980px */
-@media (max-width: 980px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .section-top .p1 {
     font-size: var(--font-size6);
     font-weight: bolder;
@@ -871,7 +982,7 @@ span {
 } /* notify me responsiveness ends */
 
 /* Latest/popular responsiveness starts */
-/* ==> 860px */
+/* ==> 1280px */
 @media (max-width: 1280px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
@@ -884,8 +995,8 @@ span {
 /* Latest/popular responsiveness ends */
 
 /* premium responsiveness starts */
-/* ==> 860px */
-@media (max-width: 900px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .grid2 {
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
@@ -945,8 +1056,8 @@ span {
 /* premium responsiveness ends */
 
 /* guide section responsiveness starts */
-/* ==> 900px */
-@media (max-width: 900px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .guide-content {
     flex-direction: column;
     gap: 0px;
@@ -964,8 +1075,8 @@ span {
 /* guide section responsiveness ends */
 
 /* freelance section responsiveness starts */
-/* ==> 900px */
-@media (max-width: 900px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .freelance-content {
     flex-direction: column-reverse;
     gap: 10px;
@@ -1012,8 +1123,8 @@ span {
 /* freelance section responsiveness ends  */
 
 /* who is brad section responsiveness starts */
-/* ==> 900px */
-@media (max-width: 950px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .brad-content {
     flex-direction: column;
     gap: 0;
@@ -1063,8 +1174,8 @@ span {
 /* traversy section responsiveness ends */
 
 /* popular section responsiveness starts */
-/* ==> 860px */
-@media (max-width: 860px) {
+/* ==> 1280px */
+@media (max-width: 1280px) {
   .grid4 {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -1086,3 +1197,24 @@ span {
   }
 }
 /* footer section responsiveness ends  */
+
+/*  */
+@media (max-width: 950px) {
+  .modal-background {
+    width: 100%;
+  }
+
+  .modal-contents {
+    width: 90%;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Utilizing `top: 50%;` and `left: 50%;` positions the element at the center, while `transform: translate(-50%, -50%);` refines the centering by adjusting the position based on the element's dimensions. */
+  }
+
+  .modal-texts h1 {
+    font-size: var(--font-size10);
+  }
+}
